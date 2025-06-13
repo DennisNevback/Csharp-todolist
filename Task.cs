@@ -11,7 +11,7 @@ namespace TodoTasks
     public DateTime? DateDue { get; set; }
     public DateTime? DateCompleted { get; set; }
     public DateTime DateAdded { get; set; }
-    public bool Completed { get; set; }
+    //public bool Completed { get; set; }
 
     // constructor
     public TodoTask(string title, string project, DateTime? dateDue = null)
@@ -20,7 +20,7 @@ namespace TodoTasks
       this.Project = project;
       this.DateDue = dateDue;
       this.DateAdded = DateTime.Now;
-      this.Completed = false;
+      //this.Completed = false;
     }
 
 
@@ -33,13 +33,13 @@ namespace TodoTasks
 
     public void SetComplete()
     {
-      this.Completed = true;
+      //this.Completed = true;
       this.DateCompleted = DateTime.Now;
     }
 
     public void UndoComplete()
     {
-      this.Completed = false;
+      //this.Completed = false;
       this.DateCompleted = null;
     }
 

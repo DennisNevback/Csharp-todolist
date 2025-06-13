@@ -1,6 +1,4 @@
-﻿/*using System;
-using System.Threading.Tasks;*/
-using System.Text.Json;
+﻿using System.Text.Json;
 using TodoTasks;
 
 //File that keeps the data from the objects
@@ -18,7 +16,7 @@ void CreateTask()
   //Basic information needed for task creation
   Console.WriteLine("What type of task would you like to create?");
   string title = Console.ReadLine() ?? "";
-  Console.WriteLine("Could you provide a project?");
+  Console.WriteLine("Please provide a project");
   string project = Console.ReadLine() ?? "";
 
   //Check for due date (information not needed)
@@ -32,7 +30,18 @@ void CreateTask()
     string dateDueMonth = Console.ReadLine() ?? "";
     Console.WriteLine("What day would you like to have the task completed? (1-31)");
     string dateDueDay = Console.ReadLine() ?? "";
-    DateTime dateDue = new DateTime(Int32.Parse(dateDueYear), Int32.Parse(dateDueMonth), Int32.Parse(dateDueDay));
+
+    DateTime? dateDue = null;
+    try
+    {
+      dateDue = new DateTime(Int32.Parse(dateDueYear), Int32.Parse(dateDueMonth), Int32.Parse(dateDueDay));
+    }
+    catch
+    {
+      Console.ForegroundColor = ConsoleColor.Red;
+      Console.WriteLine("\nPlease provide an apt date\n");
+      Console.ForegroundColor = ConsoleColor.White;
+    }
 
     //add task to list
     taskList.Add(new TodoTask(title, project, dateDue));
@@ -154,7 +163,9 @@ async Task ReadDataJSON()
 
 //Program Loop
 bool running = true;
+Console.ForegroundColor = ConsoleColor.Green;
 Console.WriteLine("This is your todolist - choose an option to continue:");
+Console.ForegroundColor = ConsoleColor.White;
 while (running)
 {
   Console.WriteLine("1. Show tasks\n2. Create a new task\n3. Edit Task\n4. Save and exit");

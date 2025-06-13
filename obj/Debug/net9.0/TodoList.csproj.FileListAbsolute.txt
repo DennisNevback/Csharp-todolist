@@ -12,3 +12,4 @@ C:\C# lexicon\Träningsövningar vecka 1\test1\TodoList\obj\Debug\net9.0\refint\
 C:\C# lexicon\Träningsövningar vecka 1\test1\TodoList\obj\Debug\net9.0\TodoList.pdb
 C:\C# lexicon\Träningsövningar vecka 1\test1\TodoList\obj\Debug\net9.0\TodoList.genruntimeconfig.cache
 C:\C# lexicon\Träningsövningar vecka 1\test1\TodoList\obj\Debug\net9.0\ref\TodoList.dll
+C:\C# lexicon\Träningsövningar vecka 1\test1\TodoList\obj\Debug\net9.0\TodoList.sourcelink.json
